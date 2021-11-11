@@ -1,5 +1,5 @@
 #!/usr/bin/env bash
-#-------------------------------------------------------------------------
+#-----------------------------------------------------------------------------------------------------------------------------------
 #    ▄████████    ▄████████  ▄████████    ▄█    █▄      ▄▄▄▄███▄▄▄▄   ███    █▄     ▄████████     ███        ▄████████    ▄████████ 
 #   ███    ███   ███    ███ ███    ███   ███    ███   ▄██▀▀▀███▀▀▀██▄ ███    ███   ███    ███ ▀█████████▄   ███    ███   ███    ███ 
 #   ███    ███   ███    ███ ███    █▀    ███    ███   ███   ███   ███ ███    ███   ███    █▀     ▀███▀▀██   ███    ███   ███    █▀  
@@ -9,7 +9,7 @@
 #   ███    ███   ███    ███ ███    ███   ███    ███   ███   ███   ███ ███    ███    ▄█    ███     ███       ███    ███   ███        
 #   ███    █▀    ███    ███ ████████▀    ███    █▀     ▀█   ███   █▀  ████████▀   ▄████████▀     ▄████▀     ███    █▀    ███        
 #                ███    ███                                                                                                         
-#-------------------------------------------------------------------------
+#-----------------------------------------------------------------------------------------------------------------------------------
 echo "--------------------------------------"
 echo "--          Network Setup           --"
 echo "--------------------------------------"
@@ -240,14 +240,14 @@ fi
 echo -e "\nDone!\n"
 if ! source install.conf; then
 	read -p "Please enter username:" username
-echo "username=$username" >> ${HOME}/ArchTitus/install.conf
+echo "username=$username" >> ${HOME}/ArchMustaf/install.conf
 fi
 if [ $(whoami) = "root"  ];
 then
     useradd -m -G wheel,libvirt -s /bin/bash $username 
 	passwd $username
-	cp -R /root/ArchTitus /home/$username/
-    chown -R $username: /home/$username/ArchTitus
+	cp -R /root/ArchMustaf /home/$username/
+    chown -R $username: /home/$username/ArchMustaf
 	read -p "Please name your machine:" nameofmachine
 	echo $nameofmachine > /etc/hostname
 else
