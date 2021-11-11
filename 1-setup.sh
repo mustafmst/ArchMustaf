@@ -66,7 +66,7 @@ PKGS=(
 'xorg-drivers'
 'xorg-xkill'
 'xorg-xinit'
-'gnome-extra' # GNOME
+'gnome' # GNOME
 'gnome-tweaks'
 # 'xterm'
 # 'plasma-desktop' # KDE Load second
