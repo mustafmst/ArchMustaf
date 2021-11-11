@@ -27,11 +27,12 @@ git clone --depth=1 https://github.com/romkatv/powerlevel10k.git $HOME/powerleve
 ln -s "$HOME/zsh/.zshrc" $HOME/.zshrc
 
 PKGS=(
+'terminator'
 'autojump'
 'awesome-terminal-fonts'
 # 'brave-bin' # Brave Browser
 'dxvk-bin' # DXVK DirectX to Vulcan
-'github-desktop-bin' # Github Desktop sync
+# 'github-desktop-bin' # Github Desktop sync
 'lightly-git'
 'lightlyshaders-git'
 'mangohud' # Gaming FPS Counter

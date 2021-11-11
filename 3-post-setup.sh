@@ -23,19 +23,6 @@ grub-mkconfig -o /boot/grub/grub.cfg
 
 # ------------------------------------------------------------------------
 
-echo -e "\nEnabling Login Display Manager"
-# systemctl enable sddm.service
-# echo -e "\nSetup SDDM Theme"
-# cat <<EOF > /etc/sddm.conf
-# [Theme]
-# Current=Nordic
-# EOF
-# ENABLE GDM to log into GNOME session
-systemctl start gdm.service
-systemctl enable gdm.service
-
-# ------------------------------------------------------------------------
-
 echo -e "\nEnabling essential services"
 
 systemctl enable cups.service
