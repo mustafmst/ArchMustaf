@@ -55,11 +55,13 @@ systemctl enable gdm.service
 # ------------------------------------------------------------------------
 echo -e "\nInstall arch and AUR missing extensions"
 
+source install.conf
+
 # dash to dock
 
-wget -O /root/dash-to-dock.zip https://extensions.gnome.org/extension-data/dash-to-dockmicxgx.gmail.com.v71.shell-extension.zip
+wget -O /home/$username/dash-to-dock.zip https://extensions.gnome.org/extension-data/dash-to-dockmicxgx.gmail.com.v71.shell-extension.zip
 mkdir -p /usr/gnome-shell/extensions
-unzip /root/dash-to-dock.zip -d /usr/share/gnome-shell/extensions/dash-to-dock@micxgx.gmail.com/
+unzip /home/$username/dash-to-dock.zip -d /usr/share/gnome-shell/extensions/dash-to-dock@micxgx.gmail.com/
 
 
 # echo -e "\nEnabling GNOME shell extensions"
@@ -77,6 +79,32 @@ unzip /root/dash-to-dock.zip -d /usr/share/gnome-shell/extensions/dash-to-dock@m
 
 echo -e "\nCopy and set background image"
 
-mv ~/ArchMustaf/backgrounds/* /usr/share/backgrounds
+mkdir -p /usr/share/backgrounds
+mv ~/ArchMustaf/data/backgrounds/* /usr/share/backgrounds
+mkdir -p /usr/share/gnome-background-properties/
+mv ~/ArchMustaf/data/background-settings/* /usr/share/gnome-background-properties
 # gsettings set org.gnome.desktop.background picture-uri file:////usr/share/backgrounds/arch-1.jpg
 # gsettings set 
+
+mkdir -p /etc/dconf/profile
+echo -e "\nUser dconf profile"
+cat <<EOF > /etc/dconf/profile/$username
+user-db:$username
+system-db:local
+EOF
+mkdir -p /ectdconf/db/local.d
+cat <<EOF > /etc/dconf/db/local.d/00-background
+# Specify the dconf path
+[org/gnome/desktop/background]
+
+# Specify the path to the desktop background image file
+picture-uri='file:///usr/local/share/backgrounds/arch-1.jpg'
+
+# Specify one of the rendering options for the background image:
+picture-options='centered'
+# Specify the left or top color when drawing gradients, or the solid color
+primary-color='000000'
+
+# Specify the right or bottom color when drawing gradients
+secondary-color='000000'
+EOF

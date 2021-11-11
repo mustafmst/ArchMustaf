@@ -19,6 +19,11 @@ From initial Prompt type the following commands:
 pacman -Sy git
 git clone https://github.com/mustafmst/ArchMustaf
 cd ArchMustaf
+```
+
+Rename `install.example.conf` file to install.conf and change details in it.
+
+```
 ./install.sh
 ```
 
