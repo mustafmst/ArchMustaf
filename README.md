@@ -1,4 +1,4 @@
-# ArchTitus Installer Script
+# Fork of ArchTitus Installer Script
 
 <img src="https://i.imgur.com/YiNMnan.png" />
 
@@ -17,9 +17,9 @@ From initial Prompt type the following commands:
 
 ```
 pacman -Sy git
-git clone https://github.com/ChrisTitusTech/ArchTitus
-cd ArchTitus
-./archtitus.sh
+git clone https://github.com/mustafmst/ArchMustaf
+cd ArchMustaf
+./install.sh
 ```
 
 ### System Description
