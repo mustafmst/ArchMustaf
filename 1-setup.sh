@@ -244,7 +244,7 @@ elif lspci | grep -E "Integrated Graphics Controller"; then
 fi
 
 echo -e "\nDone!\n"
-if ! source install.conf; then
+if ! source ${HOME}/ArchMustaf/Install.conf; then
 	read -p "Please enter username:" username
 echo "username=$username" >> ${HOME}/ArchMustaf/install.conf
 fi

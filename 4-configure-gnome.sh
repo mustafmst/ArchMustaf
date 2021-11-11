@@ -55,7 +55,7 @@ systemctl enable gdm.service
 # ------------------------------------------------------------------------
 echo -e "\nInstall arch and AUR missing extensions"
 
-source install.conf
+source ${HOME}/ArchMustaf/install.conf
 
 # dash to dock
 
@@ -108,3 +108,4 @@ primary-color='000000'
 # Specify the right or bottom color when drawing gradients
 secondary-color='000000'
 EOF
+dconf update
