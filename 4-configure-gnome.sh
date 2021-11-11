@@ -1,5 +1,16 @@
-# ------------------------------------------------------------------------
-
+#!/usr/bin/env bash
+#----------------------------------------------------------------------------------------------
+#  ▄▄▄       ██▀███   ▄████▄   ██░ ██  ███▄ ▄███▓ █    ██   ██████ ▄▄▄█████▓ ▄▄▄        █████▒
+# ▒████▄    ▓██ ▒ ██▒▒██▀ ▀█  ▓██░ ██▒▓██▒▀█▀ ██▒ ██  ▓██▒▒██    ▒ ▓  ██▒ ▓▒▒████▄    ▓██   ▒ 
+# ▒██  ▀█▄  ▓██ ░▄█ ▒▒▓█    ▄ ▒██▀▀██░▓██    ▓██░▓██  ▒██░░ ▓██▄   ▒ ▓██░ ▒░▒██  ▀█▄  ▒████ ░ 
+# ░██▄▄▄▄██ ▒██▀▀█▄  ▒▓▓▄ ▄██▒░▓█ ░██ ▒██    ▒██ ▓▓█  ░██░  ▒   ██▒░ ▓██▓ ░ ░██▄▄▄▄██ ░▓█▒  ░ 
+#  ▓█   ▓██▒░██▓ ▒██▒▒ ▓███▀ ░░▓█▒░██▓▒██▒   ░██▒▒▒█████▓ ▒██████▒▒  ▒██▒ ░  ▓█   ▓██▒░▒█░    
+#  ▒▒   ▓▒█░░ ▒▓ ░▒▓░░ ░▒ ▒  ░ ▒ ░░▒░▒░ ▒░   ░  ░░▒▓▒ ▒ ▒ ▒ ▒▓▒ ▒ ░  ▒ ░░    ▒▒   ▓▒█░ ▒ ░    
+#   ▒   ▒▒ ░  ░▒ ░ ▒░  ░  ▒    ▒ ░▒░ ░░  ░      ░░░▒░ ░ ░ ░ ░▒  ░ ░    ░      ▒   ▒▒ ░ ░      
+#   ░   ▒     ░░   ░ ░         ░  ░░ ░░      ░    ░░░ ░ ░ ░  ░  ░    ░        ░   ▒    ░ ░    
+#       ░  ░   ░     ░ ░       ░  ░  ░       ░      ░           ░                 ░  ░        
+#                    ░                                                                        
+#----------------------------------------------------------------------------------------------
 echo -e "\n------------------------------------------------------------------------"
 echo -e "\t\t\t\t INSTALLING AND CONFIGURING GNOME DE"
 echo -e "\n------------------------------------------------------------------------"
@@ -86,13 +97,16 @@ mv ~/ArchMustaf/data/background-settings/* /usr/share/gnome-background-propertie
 # gsettings set org.gnome.desktop.background picture-uri file:////usr/share/backgrounds/arch-1.jpg
 # gsettings set 
 
-mkdir -p /etc/dconf/profile
 echo -e "\nUser dconf profile"
+mkdir -p /etc/dconf/profile
+touch /etc/dconf/profile/$username
 cat <<EOF > /etc/dconf/profile/$username
 user-db:$username
 system-db:local
 EOF
-mkdir -p /ectdconf/db/local.d
+echo -e "\nCreating background config file"
+mkdir -p /etc/dconf/db/local.d
+touch /etc/dconf/db/local.d/00-background
 cat <<EOF > /etc/dconf/db/local.d/00-background
 # Specify the dconf path
 [org/gnome/desktop/background]
@@ -108,4 +122,6 @@ primary-color='000000'
 # Specify the right or bottom color when drawing gradients
 secondary-color='000000'
 EOF
+
+echo -e "\n\nUpdating dconf"
 dconf update
