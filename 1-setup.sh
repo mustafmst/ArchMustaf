@@ -64,8 +64,10 @@ PKGS=(
 'xorg-drivers'
 'xorg-xkill'
 'xorg-xinit'
-'xterm'
-'plasma-desktop' # KDE Load second
+'gnome' # GNOME
+'gnome-tweaks'
+# 'xterm'
+# 'plasma-desktop' # KDE Load second
 'alsa-plugins' # audio plugins
 'alsa-utils' # audio utils
 'ark' # compression
@@ -81,8 +83,8 @@ PKGS=(
 'bluez'
 'bluez-libs'
 'bluez-utils'
-'breeze'
-'breeze-gtk'
+# 'breeze'
+# 'breeze-gtk'
 'bridge-utils'
 'btrfs-progs'
 'celluloid' # video players
@@ -100,6 +102,7 @@ PKGS=(
 'exfat-utils'
 'extra-cmake-modules'
 'filelight'
+'firefox'
 'flex'
 'fuse2'
 'fuse3'
@@ -128,7 +131,7 @@ PKGS=(
 'kinfocenter'
 'kscreen'
 'kvantum-qt5'
-'kitty'
+# 'kitty'
 'konsole'
 'kscreen'
 'layer-shell-qt'
