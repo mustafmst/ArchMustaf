@@ -22,7 +22,6 @@ makepkg -si --noconfirm
 cd ~
 
 PKGS=(
-'terminator'
 'autojump'
 'awesome-terminal-fonts'
 'dxvk-bin' # DXVK DirectX to Vulcan
@@ -44,8 +43,4 @@ PKGS=(
 for PKG in "${PKGS[@]}"; do
     yay -S --noconfirm $PKG
 done
-
-export PATH=$PATH:~/.local/bin
-
-echo -e "\nDone!\n"
 exit

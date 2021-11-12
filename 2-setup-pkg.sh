@@ -65,6 +65,7 @@ echo -e "|***********************************************|"
 echo -e "-------------------------------------------------"
 
 PKGS=(
+'terminator'
 'alsa-plugins' # audio plugins
 'alsa-utils' # audio utils
 'ark' # compression
