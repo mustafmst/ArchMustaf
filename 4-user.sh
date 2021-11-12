@@ -23,6 +23,8 @@ cd ~
 
 PKGS=(
 'autojump'
+'sassc'
+'gnome-shell-extension-pop-shell'
 'awesome-terminal-fonts'
 'dxvk-bin' # DXVK DirectX to Vulcan
 'nerd-fonts-fira-code'

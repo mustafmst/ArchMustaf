@@ -64,6 +64,15 @@ enabled-extensions=['user-theme@gnome-shell-extensions.gcampax.github.com', 'das
 [org/gnome/shell/extensions/user-theme]
 name='Materia-dark-compact'
 
+[org/gnome/shell/extensions/dash-to-dock]
+apply-custom-theme=false
+background-color='rgb(0,0,0)'
+background-opacity=0.6
+custom-background-color=true
+dash-max-icon-size=32
+dock-fixed=true
+dock-position='BOTTOM'
+multi-monitor=true
 EOF
 
 echo -e "\nCreating config file"

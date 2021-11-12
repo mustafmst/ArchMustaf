@@ -69,6 +69,7 @@ echo -e "-------------------------------------------------"
 
 PKGS=(
 'terminator'
+'oxygen'
 'dconf-editor'
 'alsa-plugins' # audio plugins
 'alsa-utils' # audio utils
