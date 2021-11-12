@@ -43,4 +43,8 @@ PKGS=(
 for PKG in "${PKGS[@]}"; do
     yay -S --noconfirm $PKG
 done
+
+rm -rf ${HOME}/ArchMustaf
+rm -rf ${HOME}/yay
+
 exit
