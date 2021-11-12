@@ -29,15 +29,12 @@ PKGS=(
 'noto-fonts-emoji'
 'papirus-icon-theme'
 'ocs-url' # install packages from websites
-'sddm-nordic-theme-git'
-'snapper-gui-git'
 'ttf-droid'
 'ttf-hack'
 'ttf-meslo' # Nerdfont package
 'ttf-roboto'
 'snap-pac'
 'pamac-aur'
-'arc-gtk-theme'
 'solaar'
 )
 
