@@ -45,6 +45,9 @@ timedatectl --no-ask-password set-timezone Europe/Warsaw
 timedatectl --no-ask-password set-ntp 1
 localectl --no-ask-password set-locale LANG="pl_PL.UTF-8" LC_TIME="pl_PL.UTF-8"
 
+touch /etc/locale.conf
+echo "LANG=pl_PL.UTF-8" > /etc/locale.conf
+
 # Set keymaps
 localectl --no-ask-password set-keymap pl
 
