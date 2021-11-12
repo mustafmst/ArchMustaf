@@ -59,11 +59,20 @@ cursor-theme='Breeze_Snow'
 titlebar-font='Hack Bold 11'
 
 [org/gnome/shell]
-enabled-extentions='[\'user-theme@gnome-shell-extensions.gcampax.github.com\']'
+enabled-extensions=['user-theme@gnome-shell-extensions.gcampax.github.com', 'dash-to-dock@micxgx.gmail.com', 'pamac-updates@manjaro.org', 'pop-shell@system76.com']
 
 [org/gnome/shell/extensions/user-theme]
 name='Materia-dark-compact'
 
+EOF
+
+echo -e "\nCreating config file"
+mkdir -p /etc/dconf/db/gdm.d
+touch /etc/dconf/db/gdm.d/00-basic
+cat <<EOF > /etc/dconf/db/gdm.d/00-basic
+[org.gnome.desktop.screensaver]
+picture-uri='file:///usr/share/backgrounds/m-4.jpg'
+picture-options='zoom'
 EOF
 
 
