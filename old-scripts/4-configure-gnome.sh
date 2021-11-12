@@ -52,12 +52,6 @@ for PKG in "${PKGS[@]}"; do
 done
 
 echo -e "\nEnabling Login Display Manager"
-# systemctl enable sddm.service
-# echo -e "\nSetup SDDM Theme"
-# cat <<EOF > /etc/sddm.conf
-# [Theme]
-# Current=Nordic
-# EOF
 
 # ENABLE GDM to log into GNOME session
 systemctl start gdm.service
@@ -95,7 +89,7 @@ mv ~/ArchMustaf/data/backgrounds/* /usr/share/backgrounds
 mkdir -p /usr/share/gnome-background-properties/
 mv ~/ArchMustaf/data/background-settings/* /usr/share/gnome-background-properties
 # gsettings set org.gnome.desktop.background picture-uri file:////usr/share/backgrounds/arch-1.jpg
-# gsettings set 
+
 
 echo -e "\nUser dconf profile"
 mkdir -p /etc/dconf/profile
