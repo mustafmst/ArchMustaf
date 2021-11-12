@@ -36,7 +36,7 @@ cat <<EOF > /etc/dconf/db/system.d/00-background
 [org/gnome/desktop/background]
 
 # Specify the path to the desktop background image file
-picture-uri='file:///usr/local/share/backgrounds/arch-1.jpg'
+picture-uri='file:///usr/share/backgrounds/arch-1.jpg'
 
 # Specify one of the rendering options for the background image:
 picture-options='centered'
