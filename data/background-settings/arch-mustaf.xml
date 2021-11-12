@@ -2,11 +2,33 @@
 <!DOCTYPE wallpapers SYSTEM "gnome-wp-list.dtd">
 <wallpapers>
   <wallpaper deleted="false">
-    <name>ArchMustaf Background</name>
-    <filename>/usr/local/share/backgrounds/arch-1.jpg</filename>
-    <options>centered</options>
-    <shade_type>solid</shade_type>
-    <pcolor>#000000</pcolor>
-    <scolor>#000000</scolor>
+    <name>m-1</name>
+    <filename>/usr/share/backgrounds/m-1.jpg</filename>
+    <options>zoom</options>
+  </wallpaper>
+  <wallpaper deleted="false">
+    <name>m-2</name>
+    <filename>/usr/share/backgrounds/m-2.jpg</filename>
+    <options>zoom</options>
+  </wallpaper>
+  <wallpaper deleted="false">
+    <name>m-3</name>
+    <filename>/usr/share/backgrounds/m-3.jpg</filename>
+    <options>zoom</options>
+  </wallpaper>
+  <wallpaper deleted="false">
+    <name>m-4</name>
+    <filename>/usr/share/backgrounds/m-4.jpg</filename>
+    <options>zoom</options>
+  </wallpaper>
+  <wallpaper deleted="false">
+    <name>m-5</name>
+    <filename>/usr/share/backgrounds/m-5.jpg</filename>
+    <options>zoom</options>
+  </wallpaper>
+  <wallpaper deleted="false">
+    <name>m-6</name>
+    <filename>/usr/share/backgrounds/m-6.jpg</filename>
+    <options>zoom</options>
   </wallpaper>
 </wallpapers>

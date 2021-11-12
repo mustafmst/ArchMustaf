@@ -68,6 +68,7 @@ PKGS=(
 'terminator'
 'alsa-plugins' # audio plugins
 'alsa-utils' # audio utils
+'archlinux-wallpaper'
 'ark' # compression
 'autoconf' # build
 'automake' # build

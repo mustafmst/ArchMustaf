@@ -18,7 +18,6 @@ mkdir -p /usr/share/backgrounds
 mv ~/ArchMustaf/data/backgrounds/* /usr/share/backgrounds
 mkdir -p /usr/share/gnome-background-properties/
 mv ~/ArchMustaf/data/background-settings/* /usr/share/gnome-background-properties
-# gsettings set org.gnome.desktop.background picture-uri file:////usr/share/backgrounds/arch-1.jpg
 
 
 echo -e "\nUser dconf profile"
@@ -28,23 +27,23 @@ cat <<EOF > /etc/dconf/profile/user
 user-db:user
 system-db:system
 EOF
-echo -e "\nCreating background config file"
+echo -e "\nCreating config file"
 mkdir -p /etc/dconf/db/system.d
-touch /etc/dconf/db/system.d/00-background
-cat <<EOF > /etc/dconf/db/system.d/00-background
-# Specify the dconf path
+touch /etc/dconf/db/system.d/00-basic
+cat <<EOF > /etc/dconf/db/system.d/00-basic
+
 [org/gnome/desktop/background]
+picture-uri='file:///usr/share/backgrounds/m-6.jpg'
+picture-options='zoom'
 
-# Specify the path to the desktop background image file
-picture-uri='file:///usr/share/backgrounds/arch-1.jpg'
+[org/gnome/desktop/interface]
+font-name='Hack 11'
+document-font-name='Hack 11'
+monospace-font-name='FiraCode Nerd Font weight=450 10'
 
-# Specify one of the rendering options for the background image:
-picture-options='centered'
-# Specify the left or top color when drawing gradients, or the solid color
-primary-color='000000'
+[org/gnome/desktop/wm/preferences]
+titlebar-font='Hack Bold 11'
 
-# Specify the right or bottom color when drawing gradients
-secondary-color='000000'
 EOF
 
 echo -e "\n\nUpdating dconf"
