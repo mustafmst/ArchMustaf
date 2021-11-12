@@ -30,4 +30,3 @@ then
 else
 	echo "You are already a user proceed with aur installs"
 fi
-read -p "Press any key to continue..." _
