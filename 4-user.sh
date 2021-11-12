@@ -38,6 +38,7 @@ PKGS=(
 'snap-pac'
 'pamac-aur'
 'arc-gtk-theme'
+'solaar'
 )
 
 for PKG in "${PKGS[@]}"; do
@@ -45,5 +46,15 @@ for PKG in "${PKGS[@]}"; do
 done
 
 rm -rf ${HOME}/ArchMustaf
+
+mkdir -p ${HOME}/tmp-build
+cd ${HOME}/tmp-build
+
+git clone https://github.com/micheleg/dash-to-dock.git
+cd ${HOME}/tmp-build/dash-to-dock
+make
+make install
+cd ~
+
 
 exit

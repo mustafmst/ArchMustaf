@@ -13,9 +13,9 @@
 #----------------------------------------------------------------------------------------------
 SCRIPT_DIR="$( cd -- "$( dirname -- "${BASH_SOURCE[0]}" )" &> /dev/null && pwd )"
 echo -e "-------------------------------------------------"
-echo -e "|***********************************************|"
-echo -e "| Setting up mirrors for optimal download       |"
-echo -e "|***********************************************|"
+echo -e "|***********************************************"
+echo -e "|\tSetting up mirrors for optimal download"
+echo -e "|***********************************************"
 echo -e "-------------------------------------------------"
 iso=$(curl -4 ifconfig.co/country-iso)
 timedatectl set-ntp true
@@ -35,9 +35,9 @@ echo -e "       ░  ░   ░     ░ ░       ░  ░  ░       ░      �
 echo -e "                    ░                                                                        "
 echo -e "---------------------------------------------------------------------------------------------"
 echo -e "-------------------------------------------------"
-echo -e "|***********************************************|"
-echo -e "| Setting up $iso mirrors for faster downloads  |"
-echo -e "|***********************************************|"
+echo -e "|***********************************************"
+echo -e "|\tSetting up $iso mirrors for faster downloads"
+echo -e "|***********************************************"
 echo -e "-------------------------------------------------"
 
 reflector -a 48 -c $iso -f 5 -l 20 --sort rate --save /etc/pacman.d/mirrorlist
@@ -47,9 +47,11 @@ mkdir /mnt
 echo -e "\nInstalling prereqs...\n$HR"
 pacman -S --noconfirm gptfdisk btrfs-progs
 
-echo "-------------------------------------------------"
-echo "-------select your disk to format----------------"
-echo "-------------------------------------------------"
+echo -e "-------------------------------------------------"
+echo -e "|***********************************************"
+echo -e "|\tselect your disk to format"
+echo -e "|***********************************************"
+echo -e "-------------------------------------------------"
 lsblk
 echo "Please enter disk to work on: (example /dev/sda)"
 read DISK
@@ -58,9 +60,11 @@ read -p "are you sure you want to continue (Y/N):" formatdisk
 case $formatdisk in
 
 y|Y|yes|Yes|YES)
-echo "--------------------------------------"
-echo -e "\nFormatting disk...\n$HR"
-echo "--------------------------------------"
+echo -e "-------------------------------------------------"
+echo -e "|***********************************************"
+echo -e "|\tFormatting disk..."
+echo -e "|***********************************************"
+echo -e "-------------------------------------------------"
 
 # disk prep
 sgdisk -Z ${DISK} # zap all on disk
@@ -112,9 +116,9 @@ if ! grep -qs '/mnt' /proc/mounts; then
 fi
 
 echo -e "-------------------------------------------------"
-echo -e "|***********************************************|"
-echo -e "| Arch Install on Main Drive                     |"
-echo -e "|***********************************************|"
+echo -e "|***********************************************"
+echo -e "|\tArch Install on Main Drive"
+echo -e "|***********************************************"
 echo -e "-------------------------------------------------"
 pacstrap /mnt base base-devel linux linux-firmware vim nano sudo archlinux-keyring wget libnewt --noconfirm --needed
 genfstab -U /mnt >> /mnt/etc/fstab
@@ -122,17 +126,17 @@ echo "keyserver hkp://keyserver.ubuntu.com" >> /mnt/etc/pacman.d/gnupg/gpg.conf
 cp -R ${SCRIPT_DIR} /mnt/root/ArchMustaf
 cp /etc/pacman.d/mirrorlist /mnt/etc/pacman.d/mirrorlist
 echo -e "-------------------------------------------------"
-echo -e "|***********************************************|"
-echo -e "| GRUB BIOS Bootloader Install&Check             |"
-echo -e "|***********************************************|"
+echo -e "|***********************************************"
+echo -e "|\tGRUB BIOS Bootloader Install&Check"
+echo -e "|***********************************************"
 echo -e "-------------------------------------------------"
 if [[ ! -d "/sys/firmware/efi" ]]; then
     grub-install --boot-directory=/mnt/boot ${DISK}
 fi
 echo -e "-------------------------------------------------"
-echo -e "|***********************************************|"
-echo -e "| Check for low memory systems <8G              |"
-echo -e "|***********************************************|"
+echo -e "|***********************************************"
+echo -e "|\tCheck for low memory systems <8G"
+echo -e "|***********************************************"
 echo -e "-------------------------------------------------"
 TOTALMEM=$(cat /proc/meminfo | grep -i 'memtotal' | grep -o '[[:digit:]]*')
 if [[  $TOTALMEM -lt 8000000 ]]; then
@@ -148,7 +152,7 @@ if [[  $TOTALMEM -lt 8000000 ]]; then
     echo "/opt/swap/swapfile	none	swap	sw	0	0" >> /mnt/etc/fstab #Add swap to fstab, so it KEEPS working after installation.
 fi
 echo -e "-------------------------------------------------"
-echo -e "|***********************************************|"
-echo -e "| SYSTEM READY FOR REST OF SETUP                |"
-echo -e "|***********************************************|"
+echo -e "|***********************************************"
+echo -e "|\tSYSTEM READY FOR REST OF SETUP"
+echo -e "|***********************************************"
 echo -e "-------------------------------------------------"

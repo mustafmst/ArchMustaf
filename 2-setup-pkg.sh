@@ -34,9 +34,9 @@ echo "Changing the compression settings for "$nc" cores."
 sed -i "s/COMPRESSXZ=(xz -c -z -)/COMPRESSXZ=(xz -c -T $nc -z -)/g" /etc/makepkg.conf
 fi
 echo -e "-------------------------------------------------"
-echo -e "|***********************************************|"
-echo -e "| SETUP LANGUAGE AND LOCALE                     |"
-echo -e "|***********************************************|"
+echo -e "|***********************************************"
+echo -e "| SETUP LANGUAGE AND LOCALE                     "
+echo -e "|***********************************************"
 echo -e "-------------------------------------------------"
 sed -i 's/^#en_US.UTF-8 UTF-8/en_US.UTF-8 UTF-8/' /etc/locale.gen
 sed -i 's/^#pl_PL.UTF-8 UTF-8/pl_PL.UTF-8 UTF-8/' /etc/locale.gen
@@ -69,6 +69,7 @@ echo -e "-------------------------------------------------"
 
 PKGS=(
 'terminator'
+'dconf-editor'
 'alsa-plugins' # audio plugins
 'alsa-utils' # audio utils
 'archlinux-wallpaper'
@@ -170,6 +171,7 @@ PKGS=(
 'zsh'
 'zsh-syntax-highlighting'
 'zsh-autosuggestions'
+'materia-gtk-theme'
 )
 
 for PKG in "${PKGS[@]}"; do
