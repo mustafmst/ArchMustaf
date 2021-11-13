@@ -38,6 +38,8 @@ PKGS=(
 'snap-pac'
 'pamac-aur'
 'solaar'
+'spotify'
+'vlc'
 )
 
 for PKG in "${PKGS[@]}"; do

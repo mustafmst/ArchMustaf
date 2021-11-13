@@ -60,6 +60,7 @@ titlebar-font='Hack Bold 11'
 
 [org/gnome/shell]
 enabled-extensions=['user-theme@gnome-shell-extensions.gcampax.github.com', 'dash-to-dock@micxgx.gmail.com', 'pamac-updates@manjaro.org', 'pop-shell@system76.com']
+favorite-apps=['firefox.desktop','terminator.desktop','org.gnome.Nautilus.desktop','code-oss.desktop']
 
 [org/gnome/shell/extensions/user-theme]
 name='Materia-dark-compact'
